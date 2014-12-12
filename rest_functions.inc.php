@@ -227,6 +227,11 @@
 		return jira_put('issue/'.$key, $fields);
 	}
 
+	function get_label($key) {
+		$result = jira_get('issue/'.$key);
+		return($result["fields"]["labels"]);
+	}
+
 	function remove_label($key, $label) {
 		$fields = array(
 			"update" => array(
