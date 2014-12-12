@@ -8,13 +8,13 @@
 #
 ##################################################################################
 #
-# Config importieren
+# import Config
 #
 	require_once(config.inc.php);
 #
 ##################################################################################
 #
-# Jira - REST Basicfunctionen
+# Jira - REST Basic functions
 #
 	function jira_put($resource, $data) {
 		$jdata = json_encode($data);
