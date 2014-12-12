@@ -1,9 +1,20 @@
 <?php
-	require_once(config.inc.php);
-
 ##################################################################################
 #
-# Jira - REST Grundfunktionen
+# Error-Reporting - show all errors
+#
+	error_reporting(E_ALL | E_STRICT);
+	ini_set('display_errors', TRUE);
+#
+##################################################################################
+#
+# Config importieren
+#
+	require_once(config.inc.php);
+#
+##################################################################################
+#
+# Jira - REST Basicfunctionen
 #
 	function jira_put($resource, $data) {
 		$jdata = json_encode($data);
@@ -97,16 +108,12 @@
 #
 ##################################################################################
 #
-# Jira - REST - erweiterte und vereinfachte Funktionen
+# Jira - REST - simple usable functions
 #
 	function create_issue($issue) {
 		return jira_post('issue/', $issue);
 	}
 	
-	function update_issue($key, $fields) {
-		return jira_put('issue/'.$key, $fields);
-	}
-
 	function search_issue($issue) {
 		return jira_get('search', $issue);
 	}
@@ -125,7 +132,9 @@
 		);
 		return jira_put('issue/'.$key, $fields);
 	}
-
+#
+# JIRA - REST - update summary PUT
+#
 	function update_summary($key, $summary) {
 		$fields = array(
 			"fields" => array(
@@ -134,7 +143,9 @@
 		);
 		return jira_put('issue/'.$key, $fields);
 	}
-
+#
+# JIRA - REST - update description PUT
+#
 	function update_description($key, $description) {
 		$fields = array(
 			"update" => array(
@@ -148,7 +159,7 @@
 		return jira_put('issue/'.$key, $fields);
 	}
 #
-# JIRA - REST - Reporter SET
+# JIRA - REST - set Reporter SET
 #	
 	function set_reporter($key, $reporter) {
 		$fields = array(
