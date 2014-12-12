@@ -1,4 +1,4 @@
-<?
+<?php
 ##################################################################################
 #
 # include REST functions
@@ -12,19 +12,21 @@
 	error_reporting(E_ALL | E_STRICT);
 	ini_set('display_errors', TRUE);
 #
+##################################################################################
 #
+# format output - start
 #
 	echo "<pre>".PHP_EOL;
 #
 ##################################################################################
 #
-# Issue dfor Testing
+# Some variables for testing
 #
 	$key = "TEST-1";
 #
 ##################################################################################
 #
-# getestete Funktionen
+# working functions
 #
 
 ### create Issue
@@ -42,49 +44,49 @@
 //	$result = create_issue($new_issue);
 
 ### update Summary
-	$summary = "Update summary works fine!";
+//	$summary = "Update summary works fine!";
 //	$result = update_summary($key, $summary);
 
 ### update Description
-	$description = "Update descrption works fine!";
+//	$description = "Update descrption works fine!";
 //	$result = update_description($key, $description);
 
 ### comment Issue
-	$comment = " () /\ (?) *Test-Kommentar* {noformat} Blafasel ".time()."{noformat}";
+//	$comment = " () /\ (?) *Test-Kommentar* {noformat} Blafasel ".time()."{noformat}";
 //	$result = comment_issue($key, $comment);
 
 ### edit Reporter
-	$reporter = "grubits";
+//	$reporter = "testuser";
 //	$result = set_reporter($key, $reporter);
 
 ### edit Assignee
-	$assignee = "grubits";
+//	$assignee = "testuser";
 //	$result = set_assignee($key, $assignee);
 
 ### remove Assignee
 //	$result = remove_assignee($key);
 
 ### add Watcher
-	$watcher = "grubits";
+//	$watcher = "testuser";
 //	$result = add_watcher($key, $watcher);
 
 ### remove Watcher
-	$watcher = "grubits";
+//	$watcher = "testuser";
 //	$result = remove_watcher($key, $watcher);
 
 ### get Watchers
 //	$result = get_watcher($key);
 
 ### add Label
-	$label = "Tested_by_Grubits";
+//	$label = "Tested";
 //	$result = add_label($key, $label);
 
 ### remove Label
-	$label = "Tested_by_Grubits";
+//	$label = "Tested";
 //	$result = remove_label($key, $label);
 
 ### set Priority
-	$priority = "1";
+//	$priority = "1";
 //	$result = set_priority($key, $priority);
 
 ### get Priority
@@ -99,7 +101,7 @@
 //	$result = get_status($key);
 
 ### get Issuetype
-	$project = "DCS";
+//	$project = "TEST";
 //	$result = get_issuetype();
 //	$result = get_issuetype($key, "issue");
 //	$result = get_issuetype($project, "project");
@@ -116,5 +118,9 @@
 #
 ##################################################################################
 #
+# format output - end
+#
 	echo "</pre>";
+#
+##################################################################################
 ?>
